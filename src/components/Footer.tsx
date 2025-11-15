@@ -77,6 +77,13 @@ export default function Footer() {
                   </span>
                 </Link>
               </li>
+              <li>
+                <Link href="/recruiting" data-testid="link-footer-about">
+                  <span className="text-muted-foreground hover:text-primary transition-colors">
+                    We are Recruiting!
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
 
