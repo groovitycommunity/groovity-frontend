@@ -520,6 +520,6 @@
   }
 
   .animate-marquee-scroll {
-    animation: marquee-scroll 25s linear infinite;
+    animation: marquee-scroll 20s linear infinite;
   }
 }
