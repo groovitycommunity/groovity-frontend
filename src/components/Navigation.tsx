@@ -15,6 +15,7 @@ export default function Navigation() {
     { label: "Events", path: "/events" },
     { label: "Beats", path: "/beats" },
     { label: "About", path: "/about" },
+    { label: "We are Recruiting!", path: "/recruiting" },
   ];
 
   useEffect(() => {
