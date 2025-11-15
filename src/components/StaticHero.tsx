@@ -21,7 +21,7 @@ export default function StaticHero() {
         </div>
 
         <h1 className="text-6xl md:text-8xl font-display font-bold tracking-tight" data-testid="text-title">
-          <span className="text-white">groo</span>
+          <span className="text-white">Groo</span>
           <span style={{ color: '#F9FF01' }}>VIT</span>
           <span className="text-white">y</span>
         </h1>
@@ -57,15 +57,15 @@ export default function StaticHero() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-16">
           <div data-testid="stat-events">
-            <div className="text-5xl md:text-6xl font-bold" style={{ color: '#F9FF01' }}>50+</div>
+            <div className="text-5xl md:text-6xl font-bold" style={{ color: '#F9FF01' }}>0+</div>
             <div className="text-sm md:text-base text-gray-400 uppercase tracking-wider mt-2">EVENTS HOSTED</div>
           </div>
           <div data-testid="stat-members">
-            <div className="text-5xl md:text-6xl font-bold" style={{ color: '#F9FF01' }}>200+</div>
+            <div className="text-5xl md:text-6xl font-bold" style={{ color: '#F9FF01' }}>30+</div>
             <div className="text-sm md:text-base text-gray-400 uppercase tracking-wider mt-2">ACTIVE MEMBERS</div>
           </div>
           <div data-testid="stat-tracks">
-            <div className="text-5xl md:text-6xl font-bold" style={{ color: '#F9FF01' }}>30+</div>
+            <div className="text-5xl md:text-6xl font-bold" style={{ color: '#F9FF01' }}>5+</div>
             <div className="text-sm md:text-base text-gray-400 uppercase tracking-wider mt-2">TRACKS RELEASED</div>
           </div>
         </div>
