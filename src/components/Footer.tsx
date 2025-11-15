@@ -22,13 +22,19 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <Button variant="ghost" size="icon" data-testid="button-instagram">
+                <a href="https://www.instagram.com/groovityclub/#" target="_blank" rel="noopener noreferrer">
                 <Instagram className="h-5 w-5" />
+                </a>
               </Button>
               <Button variant="ghost" size="icon" data-testid="button-youtube">
+                <a href="https://www.youtube.com/@Groovityclub" target="_blank" rel="noopener noreferrer">
                 <Youtube className="h-5 w-5" />
+                </a>
               </Button>
               <Button variant="ghost" size="icon" data-testid="button-email">
+                <a href="mailto:support@groovityclub.com" target="_blank" rel="noopener noreferrer">
                 <Mail className="h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
