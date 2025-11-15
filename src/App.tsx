@@ -13,7 +13,7 @@ import Events from "@/pages/Events";
 import Beats from "@/pages/Beats";
 import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
-import WeAreRecruiting from "@/pages/Rectruit";
+import WeAreRecruiting from "@/pages/Recruit";
 
 function Router() {
   return (
