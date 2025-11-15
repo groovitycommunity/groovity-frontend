@@ -13,6 +13,7 @@ import Events from "@/pages/Events";
 import Beats from "@/pages/Beats";
 import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
+import WeAreRecruiting from "@/pages/Rectruit";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/events" component={Events} />
       <Route path="/beats" component={Beats} />
       <Route path="/about" component={About} />
+      <Route path="/recruiting" component={WeAreRecruiting} />
       <Route component={NotFound} />
     </Switch>
   );
