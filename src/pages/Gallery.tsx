@@ -37,7 +37,7 @@ const eventAlbums = [
     date: "Oct 28, 2025",
     images: [
       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1571609803939-54f463a5bc93?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?w=800&h=600&fit=crop",
     ],
     description: "Epic showdown of the best rappers on campus",
@@ -47,7 +47,7 @@ const eventAlbums = [
     title: "Beat Making Masterclass",
     date: "Oct 15, 2025",
     images: [
-      "https://images.unsplash.com/photo-1598387181032-a3103a2db5b0?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=800&h=600&fit=crop",
     ],
@@ -69,9 +69,9 @@ const eventAlbums = [
     title: "DJ Night Extravaganza",
     date: "Sep 20, 2025",
     images: [
-      "https://drive.google.com/file/d/1rVgZPR2L4tKpfDsSnrYW_PCZYt8byX0U/view",
+      "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop",
-      "https://images.unsplash.com/photo-1520483601263-c80f19e0a11f?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop",
     ],
     description: "Non-stop beats from our talented DJs",
   },
