@@ -15,7 +15,7 @@ export default function Navigation() {
     { label: "Events", path: "/events" },
     { label: "Beats", path: "/beats" },
     { label: "About", path: "/about" },
-    { label: "We are Recruiting!", path: "/recruiting" },
+    { label: "We are recruiting!", path: "/recruiting" }
   ];
 
   useEffect(() => {
@@ -56,18 +56,23 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8 ml-auto">
-            {navItems.map((item) => (
-              <button
-                key={item.path}
-                onClick={() => handleNavigation(item.path)}
-                data-testid={`link-nav-${item.label.toLowerCase()}`}
-                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-primary hover:scale-105 ${
-                  isActive(item.path) ? "text-primary" : "text-muted-foreground"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const alwaysYellow = item.path === "/recruiting";
+              const baseClass = `text-sm font-medium tracking-wide transition-all duration-300 hover:text-primary hover:scale-105`;
+              const activeClass = isActive(item.path) ? "text-primary" : "text-muted-foreground";
+              const finalClass = alwaysYellow ? "text-[#F9FF00]" : activeClass;
+
+              return (
+                <button
+                  key={item.path}
+                  onClick={() => handleNavigation(item.path)}
+                  data-testid={`link-nav-${item.label.toLowerCase()}`}
+                  className={`${baseClass} ${finalClass}`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
 
           <Button
@@ -85,21 +90,30 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-border">
           <div className="px-6 py-4 space-y-3">
-            {navItems.map((item) => (
-              <button
-                key={item.path}
-                onClick={() => {
-                  handleNavigation(item.path);
-                  setMobileMenuOpen(false);
-                }}
-                data-testid={`link-mobile-${item.label.toLowerCase()}`}
-                className={`w-full text-left block px-4 py-3 rounded-md hover-elevate active-elevate-2 transition-all duration-300 ${
-                  isActive(item.path) ? "bg-primary/10 text-primary" : "text-foreground"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const alwaysYellow = item.path === "/recruiting";
+              const mobileActive = isActive(item.path);
+
+              return (
+                <button
+                  key={item.path}
+                  onClick={() => {
+                    handleNavigation(item.path);
+                    setMobileMenuOpen(false);
+                  }}
+                  data-testid={`link-mobile-${item.label.toLowerCase()}`}
+                  className={`w-full text-left block px-4 py-3 rounded-md hover-elevate active-elevate-2 transition-all duration-300 ${
+                    alwaysYellow
+                      ? "text-[#F9FF00]"
+                      : mobileActive
+                        ? "bg-primary/10 text-primary"
+                        : "text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}
