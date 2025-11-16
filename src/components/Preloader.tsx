@@ -11,7 +11,7 @@ export default function Preloader() {
     const fallbackTimer = setTimeout(() => {
       console.log('Preloader fallback timeout triggered');
       handleTransition();
-    }, 10000);
+    }, 9000);
 
     return () => clearTimeout(fallbackTimer);
   }, [isLoading]);
@@ -20,7 +20,7 @@ export default function Preloader() {
     setSlideUp(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 8700);
+    }, 10000);
   };
 
   const handleVideoEnd = () => {
