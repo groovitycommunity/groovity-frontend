@@ -11,6 +11,7 @@ interface Props {
   previewUrl: string;
   thumbnailUrl: string;
   onBuy: () => void;
+  onPlayStateChange?: (playing: boolean) => void; // 👈 ADDED BACK
 }
 
 export default function MusicTrackCardWithPlayer({
@@ -20,15 +21,16 @@ export default function MusicTrackCardWithPlayer({
   price,
   previewUrl,
   thumbnailUrl,
-  onBuy
+  onBuy,
+  onPlayStateChange
 }: Props) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    // Stop UI when another audio plays
     AudioManager.registerStopCallback(() => {
       setIsPlaying(false);
+      onPlayStateChange?.(false);
     });
   }, []);
 
@@ -39,9 +41,11 @@ export default function MusicTrackCardWithPlayer({
     if (isPlaying) {
       AudioManager.stop(audio);
       setIsPlaying(false);
+      onPlayStateChange?.(false);
     } else {
-      AudioManager.play(audio); // This stops background + all beats
+      AudioManager.play(audio); // stops other beats + site bg
       setIsPlaying(true);
+      onPlayStateChange?.(true);
     }
   };
 
@@ -51,39 +55,38 @@ export default function MusicTrackCardWithPlayer({
       px-4 py-3 flex items-center justify-between gap-3
       hover:shadow-primary/20 transition-all duration-300
     ">
+      {/* Thumbnail */}
       <img
         src={thumbnailUrl}
         className="w-14 h-14 sm:w-16 sm:h-16 object-cover rounded-lg"
       />
 
+      {/* Info */}
       <div className="flex flex-col flex-1 min-w-0 pl-2">
         <h2 className="text-base sm:text-lg font-semibold truncate">{title}</h2>
-        <p className="text-muted-foreground text-xs sm:text-sm truncate">{artist}</p>
+        <p className="text-muted-foreground text-xs sm:text-sm truncate">
+          {artist}
+        </p>
       </div>
 
+      {/* Price */}
       <div className="text-right pr-2 hidden sm:block">
         <p className="text-xl font-bold text-primary">₹{price}*</p>
         <span className="text-muted-foreground text-xs">Exclusive License</span>
       </div>
 
+      {/* Controls */}
       <div className="flex items-center gap-2 sm:gap-3">
         <button
           onClick={togglePlay}
-          className="
-            p-2 rounded-md border border-primary text-primary 
-            hover:bg-primary/10 transition
-          "
+          className="p-2 rounded-md border border-primary text-primary hover:bg-primary/10 transition"
         >
           {isPlaying ? <Pause size={16} /> : <Play size={16} />}
         </button>
 
         <button
           onClick={onBuy}
-          className="
-            bg-primary px-4 py-2 rounded-md text-black 
-            font-semibold text-sm flex items-center gap-2 
-            hover:bg-primary/80 transition
-          "
+          className="bg-primary px-4 py-2 rounded-md text-black font-semibold text-sm flex items-center gap-2 hover:bg-primary/80 transition"
         >
           <ShoppingCart size={16} /> Buy
         </button>
@@ -92,7 +95,10 @@ export default function MusicTrackCardWithPlayer({
       <audio
         ref={audioRef}
         src={previewUrl}
-        onEnded={() => setIsPlaying(false)}
+        onEnded={() => {
+          setIsPlaying(false);
+          onPlayStateChange?.(false);
+        }}
       />
     </Card>
   );
