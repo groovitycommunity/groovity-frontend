@@ -36,7 +36,7 @@ export default function Recruiting() {
           </div>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            We’re recruiting passionate students for:
+            Registration Deadlines 28, October 2025 to 3, November 2025:
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function Recruiting() {
               hover:bg-[#e4ea00] transition-all duration-300
             "
           >
-            Apply Now
+            Apply Now (Ended)
           </a>
         </div>
 
@@ -75,5 +75,6 @@ export default function Recruiting() {
     </div>
   );
 }
+
 
 
