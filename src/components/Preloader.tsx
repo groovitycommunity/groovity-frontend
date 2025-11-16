@@ -11,7 +11,7 @@ export default function Preloader() {
     const fallbackTimer = setTimeout(() => {
       console.log('Preloader fallback timeout triggered');
       handleTransition();
-    }, 8000);
+    }, 10000);
 
     return () => clearTimeout(fallbackTimer);
   }, [isLoading]);
