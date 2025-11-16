@@ -1,25 +1,26 @@
 export default function GroovityButton() {
   return (
     <button className="groovity-button" data-testid="button-groovity">
+      <a href="/recruiting">
       <p className="groovity-button__text">
-        <span style={{ '--index': 0 } as React.CSSProperties}>G</span>
-        <span style={{ '--index': 1 } as React.CSSProperties}>R</span>
-        <span style={{ '--index': 2 } as React.CSSProperties}>O</span>
-        <span style={{ '--index': 3 } as React.CSSProperties}>O</span>
-        <span style={{ '--index': 4 } as React.CSSProperties}>V</span>
-        <span style={{ '--index': 5 } as React.CSSProperties}>I</span>
-        <span style={{ '--index': 6 } as React.CSSProperties}>T</span>
-        <span style={{ '--index': 7 } as React.CSSProperties}>Y</span>
-        <span style={{ '--index': 8 } as React.CSSProperties}> </span>
+        <span style={{ '--index': 0 } as React.CSSProperties}>W</span>
+        <span style={{ '--index': 1 } as React.CSSProperties}>E</span>
+        <span style={{ '--index': 2 } as React.CSSProperties}>  </span>
+        <span style={{ '--index': 3 } as React.CSSProperties}>A</span>
+        <span style={{ '--index': 4 } as React.CSSProperties}>R</span>
+        <span style={{ '--index': 5 } as React.CSSProperties}>E</span>
+        <span style={{ '--index': 6 } as React.CSSProperties}>  </span>
+        <span style={{ '--index': 7 } as React.CSSProperties}>R</span>
+        <span style={{ '--index': 8 } as React.CSSProperties}>E</span>
         <span style={{ '--index': 9 } as React.CSSProperties}>C</span>
-        <span style={{ '--index': 10 } as React.CSSProperties}>L</span>
+        <span style={{ '--index': 10 } as React.CSSProperties}>R</span>
         <span style={{ '--index': 11 } as React.CSSProperties}>U</span>
-        <span style={{ '--index': 12 } as React.CSSProperties}>B</span>
-        <span style={{ '--index': 13 } as React.CSSProperties}> </span>
-        <span style={{ '--index': 14 } as React.CSSProperties}>V</span>
-        <span style={{ '--index': 15 } as React.CSSProperties}>I</span>
-        <span style={{ '--index': 16 } as React.CSSProperties}>T</span>
-        <span style={{ '--index': 17 } as React.CSSProperties}>B</span>
+        <span style={{ '--index': 12 } as React.CSSProperties}>I</span>
+        <span style={{ '--index': 13 } as React.CSSProperties}>T</span>
+        <span style={{ '--index': 14 } as React.CSSProperties}>I</span>
+        <span style={{ '--index': 15 } as React.CSSProperties}>N</span>
+        <span style={{ '--index': 16 } as React.CSSProperties}>G</span>
+        <span style={{ '--index': 17 } as React.CSSProperties}>  </span>
       </p>
 
       <div className="groovity-button__circle">
@@ -49,6 +50,7 @@ export default function GroovityButton() {
           ></path>
         </svg>
       </div>
+      </a>
     </button>
   );
 }
