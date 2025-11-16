@@ -58,7 +58,7 @@ export default function Recruiting() {
         {/* APPLY BUTTON */}
         <div className="flex justify-center mb-24">
           <a
-            href="https://forms.gle/your-form-link"
+            href="/not-found"
             target="_blank"
             className="
               px-8 py-3 text-lg font-semibold 
@@ -75,3 +75,4 @@ export default function Recruiting() {
     </div>
   );
 }
+
