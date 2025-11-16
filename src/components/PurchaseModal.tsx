@@ -121,7 +121,7 @@ export default function PurchaseModal({ isOpen, onClose, beat }) {
             </div>
 
             <Button className="w-full" onClick={handlePurchase}>
-              Confirm Purchase — ₹{beat.price}
+              Submit
             </Button>
           </div>
         </DialogContent>
