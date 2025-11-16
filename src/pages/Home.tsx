@@ -289,7 +289,7 @@ export default function Home() {
                 "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&h=400&fit=crop",
                 "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=400&fit=crop",
                 "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
-                "https://images.unsplash.com/photo-1598387181032-a3103a2db5b0?w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=800&h=600&fit=crop",
               ].map((img, i) => (
                 <AnimatedSection key={i} delay={i * 80}>
                   <Card
