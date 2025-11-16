@@ -389,16 +389,12 @@ export default function About() {
               </p>
               <div className="flex flex-wrap justify-center gap-8">
                 <div>
-                  <div className="text-5xl font-display font-bold text-primary mb-2">200+</div>
+                  <div className="text-5xl font-display font-bold text-primary mb-2">30+</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide">Active Members</div>
                 </div>
                 <div>
-                  <div className="text-5xl font-display font-bold text-primary mb-2">50+</div>
+                  <div className="text-5xl font-display font-bold text-primary mb-2">0+</div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide">Events Hosted</div>
-                </div>
-                <div>
-                  <div className="text-5xl font-display font-bold text-primary mb-2">5</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Years Strong</div>
                 </div>
               </div>
             </div>
