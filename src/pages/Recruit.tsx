@@ -36,7 +36,7 @@ export default function Recruiting() {
           </div>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            We’re recruiting passionate students for the following categories.
+            We’re recruiting passionate students for:
           </p>
         </div>
 
@@ -75,4 +75,5 @@ export default function Recruiting() {
     </div>
   );
 }
+
 
