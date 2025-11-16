@@ -20,7 +20,7 @@ export default function Preloader() {
     setSlideUp(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 9400);
   };
 
   const handleVideoEnd = () => {
