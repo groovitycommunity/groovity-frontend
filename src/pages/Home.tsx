@@ -6,11 +6,14 @@ import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import BackgroundCanvas from "@/components/BackgroundCanvas";
 import GroovityButton from "@/components/GroovityButton";
+import MusicTrackCardWithPlayer from "@/components/MusicTrackCardWithPlayer";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Music } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { Card } from "@/components/ui/card";
 
+/* COUNTER COMPONENT */
 function CounterStat({ end, suffix = "", label }) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -22,6 +25,7 @@ function CounterStat({ end, suffix = "", label }) {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
+
           const duration = 2000;
           const steps = 60;
           const increment = end / steps;
@@ -51,18 +55,33 @@ function CounterStat({ end, suffix = "", label }) {
   return (
     <div ref={countRef} className="text-center">
       <div className="text-5xl md:text-6xl font-display font-extrabold text-primary mb-2">
-        {count}{suffix}
+        {count}
+        {suffix}
       </div>
-      <div className="text-sm text-muted-foreground uppercase tracking-wide">{label}</div>
+      <div className="text-sm text-muted-foreground uppercase tracking-wide">
+        {label}
+      </div>
     </div>
   );
 }
 
+/* SCROLLING MARQUEE */
 function ScrollMarquee() {
   const words = [
-    "BEATS", "RAP", "GROOVE", "RHYTHM", "FREESTYLE",
-    "CYPHER", "BASS", "FLOW", "BARS", "TURNTABLES",
-    "BREAKBEAT", "CULTURE", "VIBES", "HYPE"
+    "BEATS",
+    "RAP",
+    "GROOVE",
+    "RHYTHM",
+    "FREESTYLE",
+    "CYPHER",
+    "BASS",
+    "FLOW",
+    "BARS",
+    "TURNTABLES",
+    "BREAKBEAT",
+    "CULTURE",
+    "VIBES",
+    "HYPE",
   ];
 
   const repeated = [...words, "•"].flatMap((w) => [w, "•"]);
@@ -84,38 +103,57 @@ function ScrollMarquee() {
   );
 }
 
+/* MAIN HOME PAGE */
 export default function Home() {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [events, setEvents] = useState([]);
+  const [beats, setBeats] = useState([]);
+
   const [, setLocation] = useLocation();
 
-useEffect(() => {
-  async function load() {
-    try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/events`);
-      if (!res.ok) return;
+  /* LOAD EVENTS */
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/events`);
+        if (!res.ok) return;
 
-      const data = await res.json();
+        const data = await res.json();
 
-      const upcoming = data
-        .filter((e) => new Date(e.date) > new Date())
-        .slice(0, 3);
+        const upcoming = data
+          .filter((e) => new Date(e.date) > new Date())
+          .slice(0, 3);
 
-      setEvents(upcoming);
-    } catch (err) {
-      console.error("Homepage events load failed:", err);
+        setEvents(upcoming);
+      } catch (err) {
+        console.error("Homepage events load failed:", err);
+      }
     }
-  }
-  load();
-}, []);
+    load();
+  }, []);
 
+  /* LOAD BEATS */
+  useEffect(() => {
+    async function loadBeats() {
+      try {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/beats`);
+        if (!res.ok) return;
+
+        const data = await res.json();
+        setBeats(data.slice(0, 4)); // only show 4 beats max
+      } catch (err) {
+        console.error("Beats load failed:", err);
+      }
+    }
+    loadBeats();
+  }, []);
 
   return (
     <div className="min-h-screen">
       <BackgroundCanvas />
 
       <div className="relative z-10">
-        {/* NAV WITHOUT VIT LOGO NOW */}
+        {/* NAV */}
         <div className="fixed top-0 left-0 right-0 z-50">
           <Navigation showVITLogo={false} />
         </div>
@@ -123,7 +161,7 @@ useEffect(() => {
         <StaticHero />
         <ScrollMarquee />
 
-        {/* ⭐ EVENTS SECTION */}
+        {/* ⭐ EVENT REGISTRATIONS */}
         <AnimatedSection className="py-16 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
             <div className="flex items-center justify-between mb-8">
@@ -132,13 +170,11 @@ useEffect(() => {
               </h2>
               <Link href="/events">
                 <Button variant="outline" size="sm" className="gap-2">
-                  View All
-                  <ArrowRight className="h-4 w-4" />
+                  View All <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
-            {/* No events */}
             {events.length === 0 ? (
               <p className="text-center text-muted-foreground py-6 text-lg">
                 No Events for Registration
@@ -185,7 +221,50 @@ useEffect(() => {
           </div>
         </AnimatedSection>
 
-        {/* GALLERY STATIC */}
+        {/* ⭐ BUY BEATS PREVIEW SECTION */}
+        <AnimatedSection className="py-16 px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-display font-bold text-foreground">
+                Buy Exclusive Beats
+              </h2>
+              <Link href="/beats">
+                <Button variant="outline" size="sm" className="gap-2">
+                  View All <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+
+            {beats.length === 0 ? (
+              <p className="text-center text-muted-foreground py-6 text-lg">
+                No Beats Available
+              </p>
+            ) : (
+              <div className="space-y-6">
+                {beats.map((beat, i) => (
+                  <AnimatedSection key={beat.id} delay={i * 80}>
+                    <MusicTrackCardWithPlayer
+                      id={beat.id}
+                      title={beat.title}
+                      artist={beat.artist}
+                      price={beat.price}
+                      previewUrl={beat.preview_url}
+                      thumbnailUrl={beat.thumbnail_url}
+                      onBuy={() => setLocation(`/beats`)}
+                    />
+                  </AnimatedSection>
+                ))}
+              </div>
+            )}
+
+            {/* Tiny hint */}
+            <p className="text-xs mt-4 text-muted-foreground italic text-right">
+              * Prices are negotiable
+            </p>
+          </div>
+        </AnimatedSection>
+
+        {/* ⭐ GALLERY */}
         <AnimatedSection className="py-16 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
             <div className="flex items-center justify-between mb-8">
@@ -193,26 +272,26 @@ useEffect(() => {
                 <h2 className="text-3xl font-display font-bold text-foreground">
                   Event Gallery
                 </h2>
-                <p className="text-muted-foreground">Relive the magic of our past events</p>
+                <p className="text-muted-foreground">
+                  Relive the magic of our past events
+                </p>
               </div>
 
               <Link href="/gallery">
                 <Button variant="outline" size="sm" className="gap-2">
-                  View All
-                  <ArrowRight className="h-4 w-4" />
+                  View All <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
-            {/* small static preview */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&h=400&fit=crop",
                 "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=400&fit=crop",
                 "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
-                "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1598387181032-a3103a2db5b0?w=400&h=400&fit=crop",
               ].map((img, i) => (
-                <AnimatedSection key={i} delay={i * 100}>
+                <AnimatedSection key={i} delay={i * 80}>
                   <Card
                     onClick={() => setLocation("/gallery")}
                     className="overflow-hidden cursor-pointer bg-background/90 backdrop-blur-sm group"
@@ -230,7 +309,6 @@ useEffect(() => {
           </div>
         </AnimatedSection>
 
-        {/* FOOTER WITH VIT LOGO MOVED HERE */}
         <Footer showVITLogo={true} />
 
         {selectedEvent && (
