@@ -26,8 +26,7 @@ export default function Recruiting() {
         <div className="pt-32 px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white select-none leading-tight">
             Join the Groo
-            <span className="text-white">VI</span>
-            <span className="text-[#F9FF00]">T</span>
+            <span className="text-[#F9FF00]">VIT</span>
             <span className="text-white">y</span> Movement
           </h1>
 
