@@ -36,7 +36,7 @@ export default function Recruiting() {
           </div>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Registration Deadlines 28, October 2025 to 3, November 2025:
+            Registration deadlines are upto 7, February 2026:
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export default function Recruiting() {
         {/* APPLY BUTTON */}
         <div className="flex justify-center mb-24">
           <a
-            href="/not-found"
+            href="https://forms.gle/JEcmWV61oVvw8yiX8"
             target="_blank"
             className="
               px-8 py-3 text-lg font-semibold 
@@ -66,7 +66,7 @@ export default function Recruiting() {
               hover:bg-[#e4ea00] transition-all duration-300
             "
           >
-            Apply Now (Ended)
+            Apply Now
           </a>
         </div>
 
@@ -75,6 +75,7 @@ export default function Recruiting() {
     </div>
   );
 }
+
 
 
 
