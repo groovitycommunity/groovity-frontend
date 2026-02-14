@@ -9,85 +9,109 @@ export default function Team() {
         {
             name: "Kimaya Holkar",
             role: "Student Coordinator",
-            image: "https://d1ubxffynmcda2.cloudfront.net/members/kimaya_holkar.jpg",
+            image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/kimaya_holkar.jpg",
         },
         {
             name: "Kartik Shrivastava",
             role: "Student Coordinator",
-            image: "https://d1ubxffynmcda2.cloudfront.net/members/kartik_shrivastava.jpg",
+            image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/kartik_shrivastava.jpg",
         },
     ];
     const teamMembers = [
         {
             lead: {
-                name: "TBD",
+                name: "Khushal",
                 role: "PR and Outreach Lead",
-                image: "https://i.pinimg.com/236x/4d/2e/0a/4d2e0a694015f3d2f840873d01aa5fd4.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/khushal_hingwe.webp",
             },
             coLead: {
-                name: "TBD",
+                name: "Bhavya Vijay",
                 role: "PR and Outreach Co-Lead",
-                image: "https://i.pinimg.com/236x/4d/2e/0a/4d2e0a694015f3d2f840873d01aa5fd4.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/bhavya_vijay.webp",
             }
         },
         {
             lead: {
-                name: "Lavanya Tyagi",
+                name: "Deeptanshu Sinha",
                 role: "Event Management Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/lavanya_tyagi.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/deeptanshu_sinha.webp",
             },
             coLead: {
-                name: "TBD",
+                name: "Abhishek Dangwal",
                 role: "Event Management Co-Lead",
-                image: "https://i.pinimg.com/236x/4d/2e/0a/4d2e0a694015f3d2f840873d01aa5fd4.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/abhishek_dangwal.webp",
             }
         },
         {
             lead: {
                 name: "Aryan",
-                role: "Media and Design Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/aryan_media.jpg",
+                role: "Visuals and Design Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/aryan_thombare.webp",
             },
             coLead: {
                 name: "Navya Gupta",
-                role: "Media and Design Co-Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/navya_gupta.jpg",
+                role: "Visuals and Design Co-Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/navya_gupta.webp",
             }
         },
         {
             lead: {
                 name: "Raj Sachan",
                 role: "Technical Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/raj_sachan.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/raj_sachan.webp",
             },
             coLead: {
                 name: "Vishwesh Singh",
                 role: "Technical Co-Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/vishwesh_singh.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/vishwesh_singh.webp",
             }
         },
         {
             lead: {
                 name: "Priangsu Halder",
-                role: "Finance and Sponsorship Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/priangsu_halder.jpg",
+                role: "Finance Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/priangsu_halder.webp",
             },
             coLead: {
                 name: "Rohit Dubey",
-                role: "Finance and Sponsorship Co-Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/rohit_dubey.jpg",
+                role: "Finance Co-Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/rohit_dubey.webp",
             }
         },
         {
             lead: {
-                name: "Archit",
+                name: "Archit Kolte",
                 role: "Photography Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/archit.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/archit_kolte.webp",
             },
             coLead: {
                 name: "Aditya Kohli",
                 role: "Photography Co-Lead",
-                image: "https://d1ubxffynmcda2.cloudfront.net/members/aditya_kohli.jpg",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/aditya_kohli.webp",
+            }
+        },
+        {
+            lead: {
+                name: "Taufiq Ahamed",
+                role: "Social Media Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/taufiq_ahamed.webp",
+            },
+            coLead: {
+                name: "Aryan Chilakwad",
+                role: "Social Media Co-Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/aryan_chilakwad.webp",
+            }
+        },
+        {
+            lead: {
+                name: "Arnav Sharma",
+                role: "Music Production Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/arnav_sharma.webp",
+            },
+            coLead: {
+                name: "Anuj Parashar",
+                role: "Music Production Co-Lead",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/aditya_kohli.webp",
             }
         },
     ];
