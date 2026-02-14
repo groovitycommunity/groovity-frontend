@@ -19,10 +19,6 @@ type EventType = {
   account_number?: string | null;
   ifsc?: string | null;
   qr_url?: string | null;
-
-  // 🔥 NEW FIELDS
-  registration_type?: "internal" | "external";
-  external_form_url?: string | null;
 };
 
 export default function Events() {
@@ -52,17 +48,14 @@ export default function Events() {
           title: d.title,
           date: d.date,
           venue: d.venue,
-          imageUrl: d.image_url ?? null, // 🔥 snake_case fix
-          isPaid: d.is_paid === 1,
+          imageUrl: d.imageUrl ?? null,
+          isPaid: d.isPaid ?? false,
           price: d.price ?? null,
           upi_id: d.upi_id ?? null,
           account_number: d.account_number ?? null,
           ifsc: d.ifsc ?? null,
           qr_url: d.qr_url ?? null,
-
-          // 🔥 IMPORTANT
-          registration_type: d.registration_type ?? "internal",
-          external_form_url: d.external_form_url ?? null,
+          registrationCount: d.registrationCount ?? 0,
         }));
 
         setEvents(formatted);
@@ -70,7 +63,6 @@ export default function Events() {
         console.error("Failed to load events:", err);
       }
     }
-
     load();
   }, []);
 
@@ -81,6 +73,7 @@ export default function Events() {
       <AnimatedSection className="pt-32 pb-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
 
+          {/* PAGE TITLE */}
           <h1 className="text-5xl md:text-6xl font-display font-extrabold text-foreground mb-4">
             Events
           </h1>
@@ -89,6 +82,7 @@ export default function Events() {
             Join our workshops, concerts, and seminars.
           </p>
 
+          {/* EVENTS GRID */}
           {events.length === 0 ? (
             <p className="text-muted-foreground text-lg">No events available.</p>
           ) : (
@@ -104,11 +98,6 @@ export default function Events() {
                     status="upcoming"
                     eventType={ev.isPaid ? "paid" : "free"}
                     imageUrl={ev.imageUrl ?? undefined}
-
-                    // 🔥 THIS FIXES GOOGLE FORM
-                    registrationType={ev.registration_type}
-                    externalFormUrl={ev.external_form_url ?? undefined}
-
                     onRegister={() =>
                       setSelectedEvent({
                         id: ev.id,
@@ -132,6 +121,7 @@ export default function Events() {
 
       <Footer />
 
+      {/* MODAL */}
       {selectedEvent && (
         <EventRegistrationModal
           isOpen={true}
