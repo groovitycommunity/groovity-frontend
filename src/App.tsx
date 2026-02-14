@@ -22,8 +22,6 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 
 
-
-
 function Router() {
   return (
     <Switch>
