@@ -142,11 +142,7 @@ export default function Gallery() {
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8">
-<<<<<<< HEAD
             We’re cooking up something fire 🔥
-=======
-            We’re cooking up something fire 🔥  
->>>>>>> b5df101fa18d4fad0da64bc903a4a444e8b75972
             Event memories, photos, and moments will drop here very soon.
           </p>
 
