@@ -35,17 +35,28 @@ export default function BackgroundCanvas() {
 
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
+  useEffect(() => {
+    const setHeight = () => {
+      document.documentElement.style.setProperty(
+        "--app-height",
+        `${window.innerHeight}px`
+      );
+    };
+
+    setHeight();
+    window.addEventListener("resize", setHeight);
+
+    return () => window.removeEventListener("resize", setHeight);
+  }, []);
+
 
 
   return (
     <div className="fixed left-0 right-0 z-0 overflow-hidden pointer-events-none"
       style={{
-        top: "5rem",
-        height: window.innerWidth < 768
-          ? "calc(100svh - 5rem)"
-          : "calc(100dvh - 5rem)"
-      }}
-
+    top: "5rem",
+    height: "calc(var(--app-height) - 5rem)"
+  }}
     >
 
 
