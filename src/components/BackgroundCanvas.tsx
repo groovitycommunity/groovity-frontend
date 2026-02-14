@@ -46,7 +46,7 @@ export default function BackgroundCanvas() {
         autoPlay
         loop
         playsInline
-        muted={isMobile}
+        muted
         src={backgroundVideo}
         className="absolute inset-0 w-full h-full object-cover"
         style={{

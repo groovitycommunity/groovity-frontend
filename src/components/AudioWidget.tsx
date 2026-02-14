@@ -74,7 +74,7 @@ export default function AudioWidget() {
 
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
-    const [volume, setVolume] = useState(0.8);
+    const [volume, setVolume] = useState(0);
     const [progress, setProgress] = useState(0);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -102,13 +102,17 @@ export default function AudioWidget() {
         const video = getVideo();
         if (!video) return;
 
-        video.muted = false;
-        video.volume = volume;
-
-        // Always loop
+        // Always ensure loop
         video.loop = true;
 
+        // If user increases volume above 0 → unmute
+        if (volume > 0) {
+            video.muted = false;
+        }
+
+        video.volume = volume;
     }, [volume]);
+
 
     // 🔹 Track Progress
     useEffect(() => {
