@@ -2,7 +2,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 
 interface EventCardProps {
   id: string;
@@ -13,6 +13,11 @@ interface EventCardProps {
   status: "upcoming" | "live" | "past";
   eventType?: "free" | "paid";
   imageUrl?: string | null;
+
+  // 🔥 New fields
+  registrationType?: "internal" | "external";
+  externalFormUrl?: string;
+
   onRegister?: () => void;
 }
 
@@ -23,13 +28,26 @@ export default function EventCard({
   category,
   status,
   imageUrl,
+  registrationType = "internal",
+  externalFormUrl,
   onRegister,
 }: EventCardProps) {
   const statusConfig = {
-    upcoming: { label: "Upcoming", color: "bg-primary text-primary-foreground" },
-    live: { label: "Live Now", color: "bg-green-500 text-white animate-pulse" },
-    past: { label: "Past", color: "bg-muted text-muted-foreground" },
+    upcoming: {
+      label: "Upcoming",
+      color: "bg-primary text-primary-foreground",
+    },
+    live: {
+      label: "Live Now",
+      color: "bg-green-500 text-white animate-pulse",
+    },
+    past: {
+      label: "Past",
+      color: "bg-muted text-muted-foreground",
+    },
   };
+
+  const isExternal = registrationType === "external" && externalFormUrl;
 
   return (
     <Card className="overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 border-border">
@@ -54,9 +72,24 @@ export default function EventCard({
           <Badge className={`${statusConfig[status].color} shadow-lg`}>
             {statusConfig[status].label}
           </Badge>
-          <Badge variant="outline" className="bg-background/30 backdrop-blur-sm border-primary/30 text-foreground">
-            {category}
-          </Badge>
+
+          <div className="flex gap-2">
+            {isExternal && (
+              <Badge
+                variant="outline"
+                className="bg-background/30 backdrop-blur-sm border-yellow-400 text-yellow-300"
+              >
+                Google Form
+              </Badge>
+            )}
+
+            <Badge
+              variant="outline"
+              className="bg-background/30 backdrop-blur-sm border-primary/30 text-foreground"
+            >
+              {category}
+            </Badge>
+          </div>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -74,6 +107,7 @@ export default function EventCard({
             </div>
             <span className="font-medium">{date}</span>
           </div>
+
           <div className="flex items-center gap-3 text-sm text-foreground/80">
             <div className="h-9 w-9 rounded-md bg-primary/10 flex items-center justify-center">
               <MapPin className="h-4 w-4 text-primary" />
@@ -83,15 +117,35 @@ export default function EventCard({
         </div>
 
         {status !== "past" && (
-          <Button
-            variant="default"
-            className="w-full gap-2"
-            onClick={onRegister}
-            data-testid="button-register"
-          >
-            {status === "live" ? "Join Now" : "Register Now"}
-            <ArrowRight className="h-4 w-4" />
-          </Button>
+          <>
+            {isExternal ? (
+              <a
+                href={externalFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Button
+                  variant="default"
+                  className="w-full gap-2"
+                  data-testid="button-register"
+                >
+                  {status === "live" ? "Join Now" : "Register Now"}
+                  <ExternalLink className="h-4 w-4" />
+                </Button>
+              </a>
+            ) : (
+              <Button
+                variant="default"
+                className="w-full gap-2"
+                onClick={onRegister}
+                data-testid="button-register"
+              >
+                {status === "live" ? "Join Now" : "Register Now"}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            )}
+          </>
         )}
       </div>
     </Card>
