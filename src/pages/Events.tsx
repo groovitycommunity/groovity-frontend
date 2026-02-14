@@ -19,8 +19,8 @@ type EventType = {
   ifsc?: string | null;
   qr_url?: string | null;
 
-  registration_type?: "internal" | "external";
-  external_form_url?: string | null;
+  registrationType?: "internal" | "external";
+  externalFormUrl?: string | null;
 };
 
 export default function Events() {
@@ -53,8 +53,8 @@ export default function Events() {
           account_number: d.account_number ?? null,
           ifsc: d.ifsc ?? null,
           qr_url: d.qr_url ?? null,
-          registration_type: d.registration_type ?? "internal",
-          external_form_url: d.external_form_url ?? null,
+          registrationType: d.registrationType ?? "internal",
+          externalFormUrl: d.externalFormUrl ?? null,
         }));
 
         setEvents(formatted);
@@ -98,8 +98,8 @@ export default function Events() {
                     eventType={ev.isPaid ? "paid" : "free"}
                     imageUrl={ev.imageUrl ?? undefined}
                   
-                    registrationType={ev.registration_type}
-                    externalFormUrl={ev.external_form_url ?? undefined}
+                    registrationType={ev.registrationType}
+                    externalFormUrl={ev.externalFormUrl ?? undefined}
                   
                     onRegister={() =>
                       setSelectedEvent({
