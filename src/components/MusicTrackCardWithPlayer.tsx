@@ -36,18 +36,25 @@ export default function MusicTrackCardWithPlayer({
 
   const togglePlay = () => {
     const audio = audioRef.current;
+    const heroVideo = document.getElementById("hero-video") as HTMLVideoElement | null;
+
     if (!audio) return;
 
     if (isPlaying) {
       AudioManager.stop(audio);
       setIsPlaying(false);
       onPlayStateChange?.(false);
+
+      heroVideo?.play().catch(() => { }); // ▶ resume bg video
     } else {
-      AudioManager.play(audio); // stops other beats + site bg
+      AudioManager.play(audio);
       setIsPlaying(true);
       onPlayStateChange?.(true);
+
+      heroVideo?.pause(); // ⏸ pause bg video
     }
   };
+
 
   return (
     <Card className="
@@ -98,7 +105,11 @@ export default function MusicTrackCardWithPlayer({
         onEnded={() => {
           setIsPlaying(false);
           onPlayStateChange?.(false);
+
+          const heroVideo = document.getElementById("hero-video") as HTMLVideoElement | null;
+          heroVideo?.play().catch(() => { });
         }}
+
       />
     </Card>
   );

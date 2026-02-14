@@ -49,6 +49,9 @@ export default function BackgroundCanvas() {
         muted={isMobile}
         src={backgroundVideo}
         className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          filter: `blur(${blurAmount}px)`
+        }}
       />
 
 
