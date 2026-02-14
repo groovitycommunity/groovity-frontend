@@ -35,47 +35,30 @@ export default function BackgroundCanvas() {
 
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
-  useEffect(() => {
-    const isMobile = window.innerWidth < 768; // Tailwind md breakpoint
-    if (!isMobile) return; // 🚀 Do nothing on desktop
-
-    const setHeight = () => {
-      document.documentElement.style.setProperty(
-        "--app-height",
-        `${window.innerHeight}px`
-      );
-    };
-
-    setHeight();
-    window.addEventListener("resize", setHeight);
-
-    return () => window.removeEventListener("resize", setHeight);
-  }, []);
-
-
 
 
   return (
-    <div
-      className="fixed left-0 right-0 z-0 overflow-hidden pointer-events-none">
+    <div className="fixed left-0 right-0 z-0 overflow-hidden pointer-events-none"
+      style={{
+        top: "5rem",
+        height: "calc(100dvh - 5rem)"
+      }}
+    >
 
 
-      {!isMobile && (
-        <video
-          id="hero-video"
-          ref={videoRef}
-          autoPlay
-          loop
-          playsInline
-          muted
-          src={backgroundVideo}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{
-            filter: `blur(${blurAmount}px)`
-          }}
-        />
-      )}
-
+      <video
+        id="hero-video"
+        ref={videoRef}
+        autoPlay
+        loop
+        playsInline
+        muted
+        src={backgroundVideo}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          filter: `blur(${blurAmount}px)`
+        }}
+      />
 
 
       {/* Mobile Background */}
