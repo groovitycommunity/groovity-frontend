@@ -122,7 +122,7 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary/3 via-background to-background">
-      <Navigation />
+      {/* <Navigation />
 
       <AnimatedSection className="pt-32 pb-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -274,8 +274,8 @@ export default function Gallery() {
             </div>
           </div>
         </div>
-      )}
-
+      )} */}
+      
       <Footer />
     </div>
   );
