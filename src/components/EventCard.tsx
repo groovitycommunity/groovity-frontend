@@ -13,6 +13,11 @@ interface EventCardProps {
   status: "upcoming" | "live" | "past";
   eventType?: "free" | "paid";
   imageUrl?: string | null;
+
+  // 🔥 NEW
+  registrationType?: "internal" | "external";
+  externalFormUrl?: string;
+
   onRegister?: () => void;
 }
 
@@ -23,12 +28,23 @@ export default function EventCard({
   category,
   status,
   imageUrl,
+  registrationType = "internal",
+  externalFormUrl,
   onRegister,
 }: EventCardProps) {
   const statusConfig = {
     upcoming: { label: "Upcoming", color: "bg-primary text-primary-foreground" },
     live: { label: "Live Now", color: "bg-green-500 text-white animate-pulse" },
     past: { label: "Past", color: "bg-muted text-muted-foreground" },
+  };
+
+  const handleClick = () => {
+    if (registrationType === "external" && externalFormUrl) {
+      window.open(externalFormUrl, "_blank");
+      return;
+    }
+
+    if (onRegister) onRegister();
   };
 
   return (
@@ -54,7 +70,10 @@ export default function EventCard({
           <Badge className={`${statusConfig[status].color} shadow-lg`}>
             {statusConfig[status].label}
           </Badge>
-          <Badge variant="outline" className="bg-background/30 backdrop-blur-sm border-primary/30 text-foreground">
+          <Badge
+            variant="outline"
+            className="bg-background/30 backdrop-blur-sm border-primary/30 text-foreground"
+          >
             {category}
           </Badge>
         </div>
@@ -74,6 +93,7 @@ export default function EventCard({
             </div>
             <span className="font-medium">{date}</span>
           </div>
+
           <div className="flex items-center gap-3 text-sm text-foreground/80">
             <div className="h-9 w-9 rounded-md bg-primary/10 flex items-center justify-center">
               <MapPin className="h-4 w-4 text-primary" />
@@ -84,12 +104,14 @@ export default function EventCard({
 
         {status !== "past" && (
           <Button
-            variant="default"
             className="w-full gap-2"
-            onClick={onRegister}
-            data-testid="button-register"
+            onClick={handleClick}
           >
-            {status === "live" ? "Join Now" : "Register Now"}
+            {registrationType === "external"
+              ? "Register Now"
+              : status === "live"
+                ? "Join Now"
+                : "Register Now"}
             <ArrowRight className="h-4 w-4" />
           </Button>
         )}

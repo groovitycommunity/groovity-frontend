@@ -16,6 +16,7 @@ export default function Navigation() {
     { label: "Beats", path: "/beats" },
     { label: "About", path: "/about" },
     { label: "Team", path: "/team" },
+    { label: "Merch", path: "/merch" },
     { label: "We are recruiting!", path: "/recruiting", isCTA: true }
   ];
 

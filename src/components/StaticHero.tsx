@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Play } from "lucide-react";
 import { Link } from "wouter";
 import mobileReveal from "@/assets/mobile-reveal.png";
-import desktopReveal from "@/assets/desktop-reveal.png";
-
+import AudioWidget from "@/components/AudioWidget";
 
 
 export default function StaticHero() {
@@ -15,11 +14,13 @@ export default function StaticHero() {
         style={{ backgroundImage: `url(${mobileReveal})` }}
       ></div>
 
-      {/*Desktop Reveal*/}
-      <div
-        className="h-[calc(100vh-5rem)] w-full bg-cover bg-center bg-no-repeat hidden md:block"
-        style={{ backgroundImage: `url(${desktopReveal})` }}
-      ></div>
+      {/* Desktop Reveal */}
+      <div className="h-[calc(100vh-5rem)] w-full hidden md:block overflow-y-auto relative">
+        <div className="absolute bottom-6 left-6">
+          <AudioWidget />
+        </div>
+      </div>
+
 
       <div className="max-w-5xl mx-auto text-center space-y-8">
         <div className="inline-block">

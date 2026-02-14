@@ -1,53 +1,71 @@
-import mobileBg from "@assets/bg_for_mobile.jpg";
-import desktopBg from "@assets/bg_for_desktop.png"; // 👈 add your desktop image
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import backgroundVideo from "@/assets/bg_video.mp4";
+import mobileBg from "@/assets/bg_for_mobile.jpg";
 
 export default function BackgroundCanvas() {
   const [blurAmount, setBlurAmount] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
 
       if (scrollTop < 100) {
-        setBlurAmount(0);   // fully clear at top
+        setBlurAmount(0); // No blur at top
       } else {
         const blur = Math.min((scrollTop - 100) / 50, 8);
         setBlurAmount(blur);
       }
     };
 
-
     window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind md breakpoint
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div className="fixed left-0 right-0 bottom-0 top-[5rem] z-0 overflow-hidden pointer-events-none">
+
+      <video
+        id="hero-video"
+        autoPlay
+        loop
+        playsInline
+        muted={isMobile}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{
+          filter: `blur(${blurAmount}px)`
+        }}
+      >
+        <source src={backgroundVideo} type="video/mp4" />
+      </video>
 
       {/* Mobile Background */}
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat md:hidden transition-all duration-700 ease-in-out"
+        className="absolute inset-0 md:hidden bg-cover bg-no-repeat transition-all duration-700 ease-in-out"
         style={{
           backgroundImage: `url(${mobileBg})`,
-          backgroundPosition: "center 25%",
-          filter: `blur(${blurAmount}px)`,
+          backgroundPosition: "center center",
+          filter: `blur(${blurAmount}px)`
         }}
       />
 
-      {/* Desktop Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-no-repeat hidden md:block transition-all duration-700 ease-in-out"
-        style={{
-          backgroundImage: `url(${desktopBg})`,
-          backgroundPosition: "center 20%",
-          filter: `blur(${blurAmount}px)`,
-        }}
-      />
-
-      <div className="absolute inset-0 "></div>
+      {/* Optional dark overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
     </div>
   );
 }

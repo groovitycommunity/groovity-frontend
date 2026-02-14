@@ -43,7 +43,7 @@ export default function Preloader() {
 
     const fallbackTimer = setTimeout(() => {
       handleTransition();
-    }, 5500);
+    }, 6500);
 
     return () => clearTimeout(fallbackTimer);
   }, [isLoading]);
@@ -53,7 +53,7 @@ export default function Preloader() {
 
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 3000);
   };
 
   const handleVideoEnd = () => {

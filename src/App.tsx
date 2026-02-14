@@ -14,8 +14,11 @@ import Beats from "@/pages/Beats";
 import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
 import WeAreRecruiting from "@/pages/Recruit";
+import Merches from "./pages/Merches";
 import Team from "@/pages/Team";
 import CursorChanger from "@/components/CustomCursor";
+import ScrollToTop from "@/components/ScrollToTop";
+
 
 
 
@@ -30,6 +33,7 @@ function Router() {
       <Route path="/beats" component={Beats} />
       <Route path="/about" component={About} />
       <Route path="/team" component={Team} />
+      <Route path="/merch" component={Merches} />
       <Route path="/recruiting" component={WeAreRecruiting} />
       <Route component={NotFound} />
     </Switch>
@@ -44,6 +48,7 @@ function App() {
           <CursorChanger />
           <Preloader />
           <Toaster />
+          <ScrollToTop/>
           <Router />
           <MusicVisualizer />
           <AudioController />

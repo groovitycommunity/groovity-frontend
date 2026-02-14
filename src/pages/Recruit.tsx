@@ -58,15 +58,15 @@ export default function Recruiting() {
         {/* APPLY BUTTON */}
         <div className="flex justify-center mb-24">
           <a
-            href="https://forms.gle/JEcmWV61oVvw8yiX8"
-            target="_blank"
+            href="#"
+            // target="_blank"
             className="
               px-8 py-3 text-lg font-semibold 
               bg-[#F9FF00] text-black rounded-xl 
               hover:bg-[#e4ea00] transition-all duration-300
             "
           >
-            Apply Now
+            Apply Now (Ended)
           </a>
         </div>
 

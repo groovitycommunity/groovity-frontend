@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-              VIT Bhopal University's premier music and hip-hop technoculture club. Where beats meet innovation 
+              VIT Bhopal University's premier music and hip-hop culture club. Where beats meet innovation 
               and creativity knows no bounds.
             </p>
             <div className="flex items-center gap-3">
@@ -32,7 +32,7 @@ export default function Footer() {
                 </a>
               </Button>
               <Button variant="ghost" size="icon" data-testid="button-email">
-                <a href="mailto:support@groovityclub.com" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:support@groovity.studio" target="_blank" rel="noopener noreferrer">
                 <Mail className="h-5 w-5" />
                 </a>
               </Button>
@@ -77,6 +77,20 @@ export default function Footer() {
                   </span>
                 </Link>
               </li>
+              <li>
+                <Link href="/team" data-testid="link-footer-team">
+                  <span className="text-muted-foreground hover:text-primary transition-colors">
+                    Team
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/merch" data-testid="link-footer-merch">
+                  <span className="text-muted-foreground hover:text-primary transition-colors">
+                    Merch
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -89,7 +103,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span>support@groovityclub.com</span>
+                <span>support@groovity.studio</span>
               </li>
             </ul>
           </div>
