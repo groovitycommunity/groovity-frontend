@@ -46,7 +46,7 @@ export default function Events() {
           title: d.title,
           date: d.date,
           venue: d.venue,
-          imageUrl: d.image_url ?? null,
+          imageUrl: d.imageUrl ?? null,
           isPaid: d.is_paid === 1,
           price: d.price ?? null,
           upi_id: d.upi_id ?? null,
