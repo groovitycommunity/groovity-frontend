@@ -221,7 +221,7 @@ export default function Team() {
                                 </p>
                                 <div className="flex flex-wrap justify-center gap-8">
                                     <div>
-                                        <div className="text-5xl font-display font-bold text-primary mb-2">30+</div>
+                                        <div className="text-5xl font-display font-bold text-primary mb-2">60+</div>
                                         <div className="text-sm text-muted-foreground uppercase tracking-wide">
                                             Active Members
                                         </div>
