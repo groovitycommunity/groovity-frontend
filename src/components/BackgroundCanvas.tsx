@@ -29,7 +29,7 @@ export default function BackgroundCanvas() {
 
       {/* Mobile Background */}
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat md:hidden transition-all duration-700 ease-in-out"
+        className="absolute inset-0 bg-cover bg-no-repeat md:hidden transition-all duration-700 ease-in-out touch-none"
         style={{
           backgroundImage: `url(${mobileBg})`,
           backgroundPosition: "center 25%",
