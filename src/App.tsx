@@ -19,8 +19,6 @@ import CursorChanger from "@/components/CustomCursor";
 
 
 
-
-
 function Router() {
   return (
     <Switch>
