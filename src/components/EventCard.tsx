@@ -14,7 +14,7 @@ interface EventCardProps {
   eventType?: "free" | "paid";
   imageUrl?: string | null;
 
-  // 🔥 NEW (optional)
+  // 🔥 NEW
   registrationType?: "internal" | "external";
   externalFormUrl?: string;
 
@@ -44,7 +44,7 @@ export default function EventCard({
       return;
     }
 
-    onRegister?.();
+    if (onRegister) onRegister();
   };
 
   return (
@@ -93,6 +93,7 @@ export default function EventCard({
             </div>
             <span className="font-medium">{date}</span>
           </div>
+
           <div className="flex items-center gap-3 text-sm text-foreground/80">
             <div className="h-9 w-9 rounded-md bg-primary/10 flex items-center justify-center">
               <MapPin className="h-4 w-4 text-primary" />
@@ -103,13 +104,11 @@ export default function EventCard({
 
         {status !== "past" && (
           <Button
-            variant="default"
             className="w-full gap-2"
             onClick={handleClick}
-            data-testid="button-register"
           >
             {registrationType === "external"
-              ? "Open Registration"
+              ? "Open Form"
               : status === "live"
               ? "Join Now"
               : "Register Now"}
