@@ -66,7 +66,7 @@ export default function BackgroundCanvas() {
       />
 
       {/* Optional dark overlay */}
-      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-black/1"></div>
     </div>
   );
 }
