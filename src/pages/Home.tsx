@@ -160,7 +160,7 @@ export default function Home() {
         <div className="fixed top-0 left-0 right-0 z-50">
           <Navigation showVITLogo={false} />
         </div>
-        <div className="h-20 md:h-0"></div>
+
         <StaticHero />
         <ScrollMarquee />
 
@@ -271,8 +271,8 @@ export default function Home() {
         </AnimatedSection>
 
 
-        {/* ⭐ GALLERY (COMMENTED OUT ORIGINAL) */}
-        {/*
+         {/* ⭐ GALLERY (COMMENTED OUT ORIGINAL) */}
+{/*
 <AnimatedSection className="py-16 px-6 lg:px-8">
   <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
@@ -318,23 +318,23 @@ export default function Home() {
 </AnimatedSection>
 */}
 
-        {/* ⭐ GALLERY COMING SOON */}
-        <AnimatedSection className="py-16 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Gallery Coming Soon
-            </h2>
+{/* ⭐ GALLERY COMING SOON */}
+<AnimatedSection className="py-16 px-6 lg:px-8">
+  <div className="max-w-4xl mx-auto text-center bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-12">
+    <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+      Gallery Coming Soon
+    </h2>
 
-            <p className="text-muted-foreground text-lg mb-6">
-              We’re capturing the best moments right now 📸
-              Event photos and memories will appear here very soon.
-            </p>
+    <p className="text-muted-foreground text-lg mb-6">
+      We’re capturing the best moments right now 📸  
+      Event photos and memories will appear here very soon.
+    </p>
 
-            <div className="text-sm text-muted-foreground">
-              Stay tuned for the drop.
-            </div>
-          </div>
-        </AnimatedSection>
+    <div className="text-sm text-muted-foreground">
+      Stay tuned for the drop.
+    </div>
+  </div>
+</AnimatedSection>
 
 
         <Footer showVITLogo={true} />

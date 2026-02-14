@@ -38,13 +38,7 @@ export default function BackgroundCanvas() {
 
 
   return (
-    <div className="fixed left-0 right-0 z-0 overflow-hidden pointer-events-none"
-      style={{
-        top: "5rem",
-        height: "calc(100dvh - 5rem)"
-      }}
-    >
-
+    <div className="fixed left-0 right-0 bottom-0 top-[5rem] z-0 overflow-hidden pointer-events-none">
 
       <video
         id="hero-video"
