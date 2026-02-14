@@ -271,12 +271,8 @@ export default function Home() {
         </AnimatedSection>
 
 
-        {/* ⭐ GALLERY (COMMENTED OUT ORIGINAL) */}
-<<<<<<< HEAD
-        {/*
-=======
+         {/* ⭐ GALLERY (COMMENTED OUT ORIGINAL) */}
 {/*
->>>>>>> b5df101fa18d4fad0da64bc903a4a444e8b75972
 <AnimatedSection className="py-16 px-6 lg:px-8">
   <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
@@ -295,7 +291,6 @@ export default function Home() {
         </Button>
       </Link>
     </div>
-<<<<<<< HEAD
 
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {[
@@ -314,49 +309,6 @@ export default function Home() {
                 src={img}
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
-            </div>
-          </Card>
-        </AnimatedSection>
-      ))}
-    </div>
-  </div>
-</AnimatedSection>
-*/}
-
-        {/* ⭐ GALLERY COMING SOON */}
-        <AnimatedSection className="py-16 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Gallery Coming Soon
-            </h2>
-
-            <p className="text-muted-foreground text-lg mb-6">
-              We’re capturing the best moments right now 📸
-              Event photos and memories will appear here very soon.
-            </p>
-
-            <div className="text-sm text-muted-foreground">
-              Stay tuned for the drop.
-=======
-
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {[
-        "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=800&h=600&fit=crop",
-      ].map((img, i) => (
-        <AnimatedSection key={i} delay={i * 80}>
-          <Card
-            onClick={() => setLocation("/gallery")}
-            className="overflow-hidden cursor-pointer bg-background/90 backdrop-blur-sm group"
-          >
-            <div className="aspect-square relative">
-              <img
-                src={img}
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-              />
->>>>>>> b5df101fa18d4fad0da64bc903a4a444e8b75972
             </div>
           </Card>
         </AnimatedSection>

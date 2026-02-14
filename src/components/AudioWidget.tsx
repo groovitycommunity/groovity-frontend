@@ -170,10 +170,6 @@ export default function AudioWidget() {
 
     return (
         <div className="relative z-10 font-mono select-none">
-            {/* Placeholder for the external video element this widget controls */}
-            <div className="hidden">
-                <video id="hero-video" src="https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4" />
-            </div>
 
             {/* Container Style Update: Dark Asphalt & Yellow Theme */}
             <div className="w-[320px] bg-[#121212] rounded-md shadow-[0_30px_60px_rgba(0,0,0,0.9)] border border-[#333] relative overflow-hidden flex flex-col group">
@@ -267,8 +263,8 @@ export default function AudioWidget() {
                                     key={track.id}
                                     onClick={() => selectTrack(idx)}
                                     className={`p-2 rounded-sm mb-1 cursor-pointer text-xs font-bold uppercase tracking-wide transition-all ${currentTrackIndex === idx
-                                            ? 'text-[#FFE600] bg-[#1a1a1a] border-l-2 border-[#FFE600]'
-                                            : 'text-[#555] hover:text-[#888] hover:bg-[#111]'
+                                        ? 'text-[#FFE600] bg-[#1a1a1a] border-l-2 border-[#FFE600]'
+                                        : 'text-[#555] hover:text-[#888] hover:bg-[#111]'
                                         }`}
                                 >
                                     {track.title}

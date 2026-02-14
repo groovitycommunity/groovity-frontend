@@ -42,17 +42,15 @@ export default function BackgroundCanvas() {
 
       <video
         id="hero-video"
+        ref={videoRef}
         autoPlay
         loop
         playsInline
         muted={isMobile}
+        src={backgroundVideo}
         className="absolute inset-0 w-full h-full object-cover"
-        style={{
-          filter: `blur(${blurAmount}px)`
-        }}
-      >
-        <source src={backgroundVideo} type="video/mp4" />
-      </video>
+      />
+
 
       {/* Mobile Background */}
       <div
