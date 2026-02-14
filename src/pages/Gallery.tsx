@@ -232,12 +232,12 @@ export default function Gallery() {
       //   </div>
       // </AnimatedSection>
 
-      {selectedAlbumData && (
-        <div 
-          className="fixed inset-0 bg-black/90 z-50 overflow-y-auto p-6"
-          onClick={() => setSelectedAlbum(null)}
-          data-testid="modal-album-view"
-        >
+      // {selectedAlbumData && (
+      //   <div 
+      //     className="fixed inset-0 bg-black/90 z-50 overflow-y-auto p-6"
+      //     onClick={() => setSelectedAlbum(null)}
+      //     data-testid="modal-album-view"
+      //   >
           {/* <div className="min-h-screen flex items-center justify-center">
             <div className="max-w-5xl w-full my-8" onClick={(e) => e.stopPropagation()}>
               <div className="flex justify-between items-center mb-6">
