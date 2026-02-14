@@ -9,7 +9,7 @@ import { Quote, Linkedin, Instagram } from "lucide-react";
 export default function About() {
   const founders = [
     {
-      name: "Chandan Kumar Behera",
+      name: "Dr. Chandan Kumar Behera",
       role: "Faculty Coordinator",
       email: "facultycoordinator@groovity.studio",
       image: "https://vitbhopal.ac.in/file/2023/06/Dr.-Chandan-Kumar-Behera.jpeg",
