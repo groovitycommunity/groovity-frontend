@@ -111,7 +111,7 @@ export default function Team() {
             coLead: {
                 name: "Anuj Parashar",
                 role: "Music Production Co-Lead",
-                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/aditya_kohli.webp",
+                image: "https://groovity-s3.s3.ap-south-1.amazonaws.com/members/anuj_parashar.webp",
             }
         },
     ];
