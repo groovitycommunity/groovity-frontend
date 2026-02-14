@@ -15,12 +15,31 @@ export default function Navigation() {
     { label: "Events", path: "/events" },
     { label: "Beats", path: "/beats" },
     { label: "About", path: "/about" },
+    { label: "Team", path: "/team" },
     { label: "We are recruiting!", path: "/recruiting", isCTA: true }
   ];
 
+  // 🔒 Disable scroll when mobile menu is open
+  useEffect(() => {
+    const html = document.documentElement;
+
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      html.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      html.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      html.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -38,11 +57,10 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
-          : "bg-transparent border-b border-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled
+        ? "bg-black/75 border-b border-border"
+        : "bg-black/30 border-b border-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -72,9 +90,8 @@ export default function Navigation() {
                 <button
                   key={item.path}
                   onClick={() => handleNavigation(item.path)}
-                  className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-primary hover:scale-105 ${
-                    isActive(item.path) ? "text-primary" : "text-muted-foreground"
-                  }`}
+                  className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-primary hover:scale-105 ${isActive(item.path) ? "text-primary" : "text-white"
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -95,8 +112,8 @@ export default function Navigation() {
 
       {/* MOBILE NAV */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-border">
-          <div className="px-6 py-4 space-y-3">
+        <div className="fixed inset-0 z-40 md:hidden bg-black/85 backdrop-blur-md">
+          <div className="px-6 py-6 space-y-3">
             {navItems.map((item) =>
               item.isCTA ? (
                 <button
@@ -116,9 +133,8 @@ export default function Navigation() {
                     handleNavigation(item.path);
                     setMobileMenuOpen(false);
                   }}
-                  className={`w-full text-left block px-4 py-3 rounded-md transition-all duration-300 ${
-                    isActive(item.path) ? "bg-primary/10 text-primary" : "text-foreground"
-                  }`}
+                  className={`w-full text-left block px-4 py-3 rounded-md transition-all duration-300 ${isActive(item.path) ? "bg-primary/10 text-primary" : "text-foreground"
+                    }`}
                 >
                   {item.label}
                 </button>

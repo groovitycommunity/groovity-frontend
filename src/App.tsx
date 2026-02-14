@@ -14,6 +14,12 @@ import Beats from "@/pages/Beats";
 import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
 import WeAreRecruiting from "@/pages/Recruit";
+import Team from "@/pages/Team";
+import CursorChanger from "@/components/CustomCursor";
+
+
+
+
 
 function Router() {
   return (
@@ -23,6 +29,7 @@ function Router() {
       <Route path="/events" component={Events} />
       <Route path="/beats" component={Beats} />
       <Route path="/about" component={About} />
+      <Route path="/team" component={Team} />
       <Route path="/recruiting" component={WeAreRecruiting} />
       <Route component={NotFound} />
     </Switch>
@@ -34,6 +41,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <AudioProvider>
+          <CursorChanger />
           <Preloader />
           <Toaster />
           <Router />

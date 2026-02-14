@@ -16,6 +16,13 @@ module.exports = {
     },
 
     extend: {
+      theme: {
+        extend: {
+          fontFamily: {
+            horizon: ["Horizon", "sans-serif"],
+          },
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

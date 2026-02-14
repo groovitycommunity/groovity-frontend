@@ -121,7 +121,7 @@ export default function Gallery() {
   const selectedAlbumData = eventAlbums.find(album => album.id === selectedAlbum);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary/10 via-background to-background">
+    <div className="min-h-screen bg-gradient-to-b from-primary/3 via-background to-background">
       <Navigation />
 
       <AnimatedSection className="pt-32 pb-12 px-6 lg:px-8">

@@ -35,7 +35,7 @@ export default function Beats() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary/10 via-background to-background">
+    <div className="min-h-screen bg-gradient-to-b from-primary/3 via-background to-background">
       <Navigation />
 
       <AnimatedSection className="pt-32 pb-10 px-6 lg:px-8">

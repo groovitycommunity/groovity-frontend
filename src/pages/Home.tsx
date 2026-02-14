@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Music } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { Card } from "@/components/ui/card";
+import CustomCursor from "@/components/CustomCursor";
+
 
 /* COUNTER COMPONENT */
 function CounterStat({ end, suffix = "", label }) {
@@ -54,7 +56,7 @@ function CounterStat({ end, suffix = "", label }) {
 
   return (
     <div ref={countRef} className="text-center">
-      <div className="text-5xl md:text-6xl font-display font-extrabold text-primary mb-2">
+      <div className="text-5xl md:text-6xl font-Horizon font-extrabold text-primary mb-2">
         {count}
         {suffix}
       </div>
@@ -88,12 +90,12 @@ function ScrollMarquee() {
   const display = [...repeated, ...repeated, ...repeated];
 
   return (
-    <div className="w-full overflow-hidden bg-primary py-6 border-y-4 border-primary/40">
+    <div className="w-full overflow-hidden bg-[#BCAE11] py-6 border-y-4 border-primary/40">
       <div className="flex whitespace-nowrap animate-marquee-scroll">
         {display.map((item, i) => (
           <span
             key={i}
-            className="text-4xl md:text-6xl font-display font-extrabold text-background px-8"
+            className="text-4xl md:text-6xl font-Horizon font-extrabold text-background px-8"
           >
             {item}
           </span>
@@ -150,6 +152,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <CustomCursor />
       <BackgroundCanvas />
 
       <div className="relative z-10">
@@ -164,7 +167,7 @@ export default function Home() {
         {/* ⭐ EVENT REGISTRATIONS */}
         <AnimatedSection className="py-16 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
               <h2 className="text-3xl font-display font-bold text-foreground">
                 Event Registrations
               </h2>
@@ -224,7 +227,7 @@ export default function Home() {
         {/* ⭐ BUY BEATS PREVIEW SECTION */}
         <AnimatedSection className="py-16 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
               <h2 className="text-3xl font-display font-bold text-foreground">
                 Buy Exclusive Beats
               </h2>
@@ -267,7 +270,7 @@ export default function Home() {
         {/* ⭐ GALLERY */}
         <AnimatedSection className="py-16 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
               <div>
                 <h2 className="text-3xl font-display font-bold text-foreground">
                   Event Gallery

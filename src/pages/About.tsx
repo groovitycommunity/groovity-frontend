@@ -9,13 +9,13 @@ import { Quote, Linkedin, Instagram } from "lucide-react";
 export default function About() {
   const founders = [
     {
-      name: "Dr. Sanay Naha",
+      name: "Chandan Kumar Behera",
       role: "Faculty Coordinator",
       email: "facultycoordinator@groovityclub.com",
-      image: "https://d1ubxffynmcda2.cloudfront.net/members/dr_sanay_naha.jpg",
+      image: "https://vitbhopal.ac.in/file/2023/06/Dr.-Chandan-Kumar-Behera.jpeg",
       quote: "Where technology meets culture, and creativity finds its rhythm.",
-      bio: "Dr. Sanay Naha has completed his Ph.D from National Institute of Technology Tiruchirappalli in Chemo-sensor technology. He has published more than 15 research articles in journals of international repute with SCI index such as Sensors and Actuators B, RSC Advances, ACS Omega, etc. He has presented 17 research papers in reputed International and National Conferences. He has more than 3 years of experience in academic and industry (IPR). His research interest includes development of chemo-sensors, biosensors, and nanomaterials for various applications.",
-      linkedin: "#",
+      bio: "Chandan Kumar Behera is a faculty member in the School of Computing Science and Engineering. He completed his M.Tech. from IIT Kharagpur and earned his Ph.D. from Andhra University College of Engineering (A), Visakhapatnam. With over 17 years of teaching and research experience, he has published 25 papers in international journals and conferences, specializing in Code Obfuscation and optimization techniques. His research interests include Software Security, Malware Analysis, and system software, and he has been honored with the Young Scientist Award.",
+      linkedin: "https://www.linkedin.com/in/dr-chandan-kumar-behera-a46875278/",
       instagram: "#"
     },
     {
@@ -35,8 +35,8 @@ export default function About() {
       image: "https://d1ubxffynmcda2.cloudfront.net/members/raaz.jpg",
       quote: "Innovation happens when creativity meets opportunity.",
       bio: "Raaz is a music artist, songwriter, music producer, and sound engineer with a deep commitment to making music speak genuinely and poignantly. Having collaborated with numerous artists, he brings creative vision together with technical detail to create a sound that is at once utterly modern and timeless. He has also helped many artists release their debut EP, single, and album through his creative guidance and technical expertise. His work represents emotion through sound: rich textures, storytelling, and experimentation combined into a form that really connects with its listeners. Guided by an unyielding passion for growth and innovation, Raaz continues to hone his craft, pushing the boundaries while being rooted in honesty and musical integrity. Any project he engages in is not just about production; it's an experience created with collaboration, intention, and respect for the art of sound.",
-      linkedin: "#",
-      instagram: "#"
+      linkedin: "https://www.linkedin.com/in/raazyadav/",
+      instagram: "https://www.instagram.com/ydvraazz/"
     },
     {
       name: "Lavanya Tyagi",
@@ -45,7 +45,7 @@ export default function About() {
       quote: "Every beat tells a story, every rhythm builds a community.",
       bio: "Hey, I'm Lavanya Tyagi and I'm currently pursuing a degree in Biotechnology at VIT Bhopal university. My voice is my canvas, and music is the art that keeps me alive. Every note, every verse, carries a heartbeat; sometimes loud, sometimes soft, but always real. As a VOCALIST, I chase connection, not perfection; music that hits different because it comes from somewhere true. I'm the kind of person who brings zeal, wit, and leadership to everything I do; whether it's leading a team, organizing events, or simply making sure the vibe is right. Music isn't just what I do—it's who I am.",
       linkedin: "#",
-      instagram: "#"
+      instagram: "https://www.instagram.com/_lavanya.tyagi._/"
     },
     {
       name: "Priangsu Halder",
@@ -54,100 +54,14 @@ export default function About() {
       quote: "Managing resources to amplify creativity and fuel our musical journey.",
       bio: "Priangsu Halder is a dynamic young leader whose journey blends finance, entrepreneurship, and strategic thinking with a grounded, dedicated approach. Currently pursuing Bioengineering at VIT Bhopal, he is actively involved in the stock market with a steadily growing investment portfolio. A self-made entrepreneur, Priangsu has successfully founded and run multiple independent ventures driven by curiosity and a sharp business mindset. With strong leadership and financial insight, he represents a new generation of thinkers building their own path one informed step at a time.",
       linkedin: "#",
-      instagram: "#"
+      instagram: "https://www.instagram.com/rotop.h/"
     },
   ];
 
-  const studentCoordinators = [
-    {
-      name: "Kimaya Holkar",
-      role: "Student Coordinator",
-      image: "https://d1ubxffynmcda2.cloudfront.net/members/kimaya_holkar.jpg",
-    },
-    {
-      name: "Kartik Shrivastava",
-      role: "Student Coordinator",
-      image: "https://d1ubxffynmcda2.cloudfront.net/members/kartik_shrivastava.jpg",
-    },
-  ];
 
-  const teamMembers = [
-    {
-      lead: {
-        name: "TBD",
-        role: "PR and Outreach Lead",
-        image: "https://i.pinimg.com/236x/4d/2e/0a/4d2e0a694015f3d2f840873d01aa5fd4.jpg",
-      },
-      coLead: {
-        name: "TBD",
-        role: "PR and Outreach Co-Lead",
-        image: "https://i.pinimg.com/236x/4d/2e/0a/4d2e0a694015f3d2f840873d01aa5fd4.jpg",
-      }
-    },
-    {
-      lead: {
-        name: "Lavanya Tyagi",
-        role: "Event Management Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/lavanya_tyagi.jpg",
-      },
-      coLead: {
-        name: "TBD",
-        role: "Event Management Co-Lead",
-        image: "https://i.pinimg.com/236x/4d/2e/0a/4d2e0a694015f3d2f840873d01aa5fd4.jpg",
-      }
-    },
-    {
-      lead: {
-        name: "Aryan",
-        role: "Media and Design Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/aryan_media.jpg",
-      },
-      coLead: {
-        name: "Navya Gupta",
-        role: "Media and Design Co-Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/navya_gupta.jpg",
-      }
-    },
-    {
-      lead: {
-        name: "Raj Sachan",
-        role: "Technical Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/raj_sachan.jpg",
-      },
-      coLead: {
-        name: "Vishwesh Singh",
-        role: "Technical Co-Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/vishwesh_singh.jpg",
-      }
-    },
-    {
-      lead: {
-        name: "Priangsu Halder",
-        role: "Finance and Sponsorship Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/priangsu_halder.jpg",
-      },
-      coLead: {
-        name: "Rohit Dubey",
-        role: "Finance and Sponsorship Co-Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/rohit_dubey.jpg",
-      }
-    },
-    {
-      lead: {
-        name: "Archit",
-        role: "Photography Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/archit.jpg",
-      },
-      coLead: {
-        name: "Aditya Kohli",
-        role: "Photography Co-Lead",
-        image: "https://d1ubxffynmcda2.cloudfront.net/members/aditya_kohli.jpg",
-      }
-    },
-  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary/10 via-background to-background">
+    <div className="min-h-screen bg-gradient-to-b from-primary/3 via-background to-background">
       <Navigation />
 
       <AnimatedSection className="pt-32 pb-12 px-6 lg:px-8">
@@ -155,7 +69,7 @@ export default function About() {
           <h1 className="text-5xl md:text-6xl font-display font-extrabold text-foreground mb-6">
             About Groo<span className="text-primary">VIT</span>y
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-white leading-relaxed">
             VIT Bhopal University's music and hip-hop technoculture club where passion meets innovation
           </p>
         </div>
@@ -164,7 +78,7 @@ export default function About() {
       <AnimatedSection className="px-6 lg:px-8 mb-20">
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-invert max-w-none">
-            <div className="text-lg text-muted-foreground space-y-6 leading-relaxed">
+            <div className="text-lg text-white space-y-6 leading-relaxed">
               <p>
                 GrooVITy has emerged as the beating heart of VIT Bhopal University's music scene. 
                 We are more than just a club – we're a movement that celebrates the fusion of 
@@ -290,89 +204,6 @@ export default function About() {
             ))}
           </div>
 
-          <h2 className="text-4xl font-display font-bold text-foreground mb-12 text-center">
-            Student Coordinators
-          </h2>
-          <div className="flex justify-center mb-16">
-            <div className="grid grid-cols-2 gap-4 max-w-2xl">
-              {studentCoordinators.map((member, index) => (
-                <AnimatedSection key={member.name} delay={index * 100}>
-                  <Card 
-                    className="overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group hover-elevate"
-                    data-testid={`card-coordinator-${index}`}
-                  >
-                    <div className="relative aspect-[3/4] overflow-hidden">
-                      <img 
-                        src={member.image} 
-                        alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mb-1">{member.role}</p>
-                    </div>
-                  </Card>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-
-          <h3 className="text-3xl font-display font-bold text-foreground mb-8 text-center">
-            Team Leads & Co-Leads
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {teamMembers.map((team, teamIndex) => (
-              <Fragment key={`team-${teamIndex}`}>
-                <AnimatedSection delay={teamIndex * 100}>
-                  <Card 
-                    className="overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group hover-elevate"
-                    data-testid={`card-lead-${team.lead.role.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    <div className="relative aspect-[3/4] overflow-hidden">
-                      <img 
-                        src={team.lead.image} 
-                        alt={team.lead.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                        {team.lead.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mb-1">{team.lead.role}</p>
-                    </div>
-                  </Card>
-                </AnimatedSection>
-
-                <AnimatedSection delay={teamIndex * 100 + 50}>
-                  <Card 
-                    className="overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group hover-elevate"
-                    data-testid={`card-colead-${team.coLead.role.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    <div className="relative aspect-[3/4] overflow-hidden">
-                      <img 
-                        src={team.coLead.image} 
-                        alt={team.coLead.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                        {team.coLead.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mb-1">{team.coLead.role}</p>
-                    </div>
-                  </Card>
-                </AnimatedSection>
-              </Fragment>
-            ))}
-          </div>
         </div>
       </AnimatedSection>
 
