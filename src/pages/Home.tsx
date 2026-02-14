@@ -225,25 +225,27 @@ export default function Home() {
         </AnimatedSection>
 
         {/* ⭐ BUY BEATS PREVIEW SECTION */}
-        <AnimatedSection className="py-16 px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-              <h2 className="text-3xl font-display font-bold text-foreground">
+        <AnimatedSection className="py-12 px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-5 sm:p-8">
+
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground">
                 Buy Exclusive Beats
               </h2>
+
               <Link href="/beats">
-                <Button variant="outline" size="sm" className="gap-2">
+                <Button variant="outline" size="sm" className="gap-2 w-fit">
                   View All <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
             {beats.length === 0 ? (
-              <p className="text-center text-muted-foreground py-6 text-lg">
+              <p className="text-center text-muted-foreground py-6 text-base sm:text-lg">
                 No Beats Available
               </p>
             ) : (
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {beats.map((beat, i) => (
                   <AnimatedSection key={beat.id} delay={i * 80}>
                     <MusicTrackCardWithPlayer
@@ -264,8 +266,10 @@ export default function Home() {
             <p className="text-xs mt-4 text-muted-foreground italic text-right">
               * Prices are negotiable
             </p>
+
           </div>
         </AnimatedSection>
+
 
         {/* ⭐ GALLERY */}
         <AnimatedSection className="py-16 px-6 lg:px-8">

@@ -8,7 +8,7 @@ import desktopReveal from "@/assets/desktop-reveal.png";
 
 export default function StaticHero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center py-20">
       {/* Mobile Reveal */}
       <div
         className="h-[calc(100vh-5rem)] w-full bg-cover bg-center bg-no-repeat md:hidden"
