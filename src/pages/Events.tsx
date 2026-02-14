@@ -97,8 +97,10 @@ export default function Events() {
                     status="upcoming"
                     eventType={ev.isPaid ? "paid" : "free"}
                     imageUrl={ev.imageUrl ?? undefined}
+                  
                     registrationType={ev.registration_type}
                     externalFormUrl={ev.external_form_url ?? undefined}
+                  
                     onRegister={() =>
                       setSelectedEvent({
                         id: ev.id,
