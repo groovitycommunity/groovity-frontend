@@ -110,8 +110,13 @@ export default function EventCard({
             {registrationType === "external"
               ? "Register Now"
               : status === "live"
+<<<<<<< HEAD
                 ? "Join Now"
                 : "Register Now"}
+=======
+              ? "Join Now"
+              : "Register Now"}
+>>>>>>> b5df101fa18d4fad0da64bc903a4a444e8b75972
             <ArrowRight className="h-4 w-4" />
           </Button>
         )}
