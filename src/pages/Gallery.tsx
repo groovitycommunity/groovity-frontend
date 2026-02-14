@@ -122,7 +122,7 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary/3 via-background to-background">
-      {/* <Navigation />
+      { <Navigation />
 
       <AnimatedSection className="pt-32 pb-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -135,102 +135,102 @@ export default function Gallery() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="px-6 lg:px-8 mb-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] rounded-md overflow-hidden bg-muted group">
-            <div className="relative w-full h-full">
-              <img
-                key={currentSlide}
-                src={allImages[currentSlide].image}
-                alt={allImages[currentSlide].title}
-                className={`w-full h-full object-cover absolute inset-0 ${
-                  direction === "right" 
-                    ? "animate-slide-in-right" 
-                    : "animate-slide-in-left"
-                }`}
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+      // <AnimatedSection className="px-6 lg:px-8 mb-20">
+      //   <div className="max-w-7xl mx-auto">
+      //     <div className="relative aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] rounded-md overflow-hidden bg-muted group">
+      //       <div className="relative w-full h-full">
+      //         <img
+      //           key={currentSlide}
+      //           src={allImages[currentSlide].image}
+      //           alt={allImages[currentSlide].title}
+      //           className={`w-full h-full object-cover absolute inset-0 ${
+      //             direction === "right" 
+      //               ? "animate-slide-in-right" 
+      //               : "animate-slide-in-left"
+      //           }`}
+      //         />
+      //       </div>
+      //       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
             
-            <div className="absolute bottom-3 md:bottom-6 left-3 md:left-6 right-3 md:right-6 text-white z-10">
-              <Badge className="mb-1 md:mb-2 text-xs" data-testid={`badge-album-${allImages[currentSlide].id}`}>
-                <Calendar className="h-3 w-3 mr-1" />
-                {allImages[currentSlide].date}
-              </Badge>
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-display font-bold mb-1 md:mb-2">
-                {allImages[currentSlide].title}
-              </h3>
-              <p className="text-white/90 text-sm md:text-base line-clamp-2">{allImages[currentSlide].description}</p>
-            </div>
+      //       <div className="absolute bottom-3 md:bottom-6 left-3 md:left-6 right-3 md:right-6 text-white z-10">
+      //         <Badge className="mb-1 md:mb-2 text-xs" data-testid={`badge-album-${allImages[currentSlide].id}`}>
+      //           <Calendar className="h-3 w-3 mr-1" />
+      //           {allImages[currentSlide].date}
+      //         </Badge>
+      //         <h3 className="text-xl md:text-2xl lg:text-3xl font-display font-bold mb-1 md:mb-2">
+      //           {allImages[currentSlide].title}
+      //         </h3>
+      //         <p className="text-white/90 text-sm md:text-base line-clamp-2">{allImages[currentSlide].description}</p>
+      //       </div>
 
-            <GalleryArrowButton
-              direction="left"
-              onClick={prevSlide}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2"
-            />
-            <GalleryArrowButton
-              direction="right"
-              onClick={nextSlide}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2"
-            />
+      //       <GalleryArrowButton
+      //         direction="left"
+      //         onClick={prevSlide}
+      //         className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2"
+      //       />
+      //       <GalleryArrowButton
+      //         direction="right"
+      //         onClick={nextSlide}
+      //         className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2"
+      //       />
 
-            <div className="absolute bottom-3 md:bottom-6 right-3 md:right-6 flex gap-1.5 md:gap-2 z-10">
-              {allImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`h-1.5 md:h-2 rounded-full transition-all ${
-                    index === currentSlide ? "w-6 md:w-8 bg-primary" : "w-1.5 md:w-2 bg-white/50"
-                  }`}
-                  data-testid={`button-slide-${index}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
+      //       <div className="absolute bottom-3 md:bottom-6 right-3 md:right-6 flex gap-1.5 md:gap-2 z-10">
+      //         {allImages.map((_, index) => (
+      //           <button
+      //             key={index}
+      //             onClick={() => setCurrentSlide(index)}
+      //             className={`h-1.5 md:h-2 rounded-full transition-all ${
+      //               index === currentSlide ? "w-6 md:w-8 bg-primary" : "w-1.5 md:w-2 bg-white/50"
+      //             }`}
+      //             data-testid={`button-slide-${index}`}
+      //           />
+      //         ))}
+      //       </div>
+      //     </div>
+      //   </div>
+      // </AnimatedSection>
 
-      <AnimatedSection className="px-6 lg:px-8 mb-20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-display font-bold text-foreground mb-8">Event Albums</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {eventAlbums.map((album, index) => (
-              <AnimatedSection key={album.id} delay={index * 100}>
-                <Card 
-                  className="overflow-hidden hover-elevate cursor-pointer group"
-                  onClick={() => setSelectedAlbum(album.id)}
-                  data-testid={`card-album-${album.id}`}
-                >
-                  <div className="relative aspect-video">
-                    <img
-                      src={album.images[0]}
-                      alt={album.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-3 right-3">
-                      <Badge variant="secondary" className="backdrop-blur-sm">
-                        {album.images.length} photos
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                      <Calendar className="h-4 w-4" />
-                      {album.date}
-                    </div>
-                    <h3 className="text-lg font-display font-bold text-foreground mb-2">
-                      {album.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {album.description}
-                    </p>
-                  </div>
-                </Card>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
+      // <AnimatedSection className="px-6 lg:px-8 mb-20">
+      //   <div className="max-w-7xl mx-auto">
+      //     <h2 className="text-3xl font-display font-bold text-foreground mb-8">Event Albums</h2>
+      //     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      //       {eventAlbums.map((album, index) => (
+      //         <AnimatedSection key={album.id} delay={index * 100}>
+      //           <Card 
+      //             className="overflow-hidden hover-elevate cursor-pointer group"
+      //             onClick={() => setSelectedAlbum(album.id)}
+      //             data-testid={`card-album-${album.id}`}
+      //           >
+      //             <div className="relative aspect-video">
+      //               <img
+      //                 src={album.images[0]}
+      //                 alt={album.title}
+      //                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+      //               />
+      //               <div className="absolute top-3 right-3">
+      //                 <Badge variant="secondary" className="backdrop-blur-sm">
+      //                   {album.images.length} photos
+      //                 </Badge>
+      //               </div>
+      //             </div>
+      //             <div className="p-4">
+      //               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+      //                 <Calendar className="h-4 w-4" />
+      //                 {album.date}
+      //               </div>
+      //               <h3 className="text-lg font-display font-bold text-foreground mb-2">
+      //                 {album.title}
+      //               </h3>
+      //               <p className="text-sm text-muted-foreground line-clamp-2">
+      //                 {album.description}
+      //               </p>
+      //             </div>
+      //           </Card>
+      //         </AnimatedSection>
+      //       ))}
+      //     </div>
+      //   </div>
+      // </AnimatedSection>
 
       {selectedAlbumData && (
         <div 
@@ -238,7 +238,7 @@ export default function Gallery() {
           onClick={() => setSelectedAlbum(null)}
           data-testid="modal-album-view"
         >
-          <div className="min-h-screen flex items-center justify-center">
+          {/* <div className="min-h-screen flex items-center justify-center">
             <div className="max-w-5xl w-full my-8" onClick={(e) => e.stopPropagation()}>
               <div className="flex justify-between items-center mb-6">
                 <div>
@@ -274,7 +274,7 @@ export default function Gallery() {
             </div>
           </div>
         </div>
-      )} */}
+      )} } */}
       
       <Footer />
     </div>
