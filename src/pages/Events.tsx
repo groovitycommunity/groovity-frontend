@@ -6,20 +6,24 @@ import EventRegistrationModal from "@/components/EventRegistrationModal";
 import AnimatedSection from "@/components/AnimatedSection";
 import Footer from "@/components/Footer";
 
-type EventType = {
-  id: string;
-  title: string;
-  date: string;
-  venue?: string;
-  imageUrl?: string | null;
-  isPaid?: boolean;
-  price?: number | null;
-  registrationCount?: number;
-  upi_id?: string | null;
-  account_number?: string | null;
-  ifsc?: string | null;
-  qr_url?: string | null;
-};
+const formatted = data.map((d: any) => ({
+  id: d.id,
+  title: d.title,
+  date: d.date,
+  venue: d.venue,
+  imageUrl: d.imageUrl ?? null,
+  isPaid: d.isPaid ?? false,
+  price: d.price ?? null,
+  upi_id: d.upi_id ?? null,
+  account_number: d.account_number ?? null,
+  ifsc: d.ifsc ?? null,
+  qr_url: d.qr_url ?? null,
+  registrationCount: d.registrationCount ?? 0,
+
+  registrationType: d.registrationType ?? "internal",
+  externalFormUrl: d.externalFormUrl ?? null,
+}));
+
 
 export default function Events() {
   const [events, setEvents] = useState<EventType[]>([]);
