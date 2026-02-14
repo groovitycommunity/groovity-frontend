@@ -108,7 +108,7 @@ export default function EventCard({
             onClick={handleClick}
           >
             {registrationType === "external"
-              ? "Open Form"
+              ? "Register Now"
               : status === "live"
               ? "Join Now"
               : "Register Now"}
