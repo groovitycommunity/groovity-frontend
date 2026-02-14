@@ -57,15 +57,7 @@ export default function BackgroundCanvas() {
 
   return (
     <div
-      className="fixed left-0 right-0 z-0 overflow-hidden pointer-events-none"
-      style={{
-        top: "5rem",
-        height:
-          window.innerWidth < 768
-            ? "calc(var(--app-height) - 5rem)"
-            : "calc(100vh - 5rem)"
-      }}
-    >
+      className="fixed left-0 right-0 z-0 overflow-hidden pointer-events-none">
 
 
       {!isMobile && (
