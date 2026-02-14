@@ -68,19 +68,22 @@ export default function BackgroundCanvas() {
     >
 
 
-      <video
-        id="hero-video"
-        ref={videoRef}
-        autoPlay
-        loop
-        playsInline
-        muted
-        src={backgroundVideo}
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{
-          filter: `blur(${blurAmount}px)`
-        }}
-      />
+      {!isMobile && (
+        <video
+          id="hero-video"
+          ref={videoRef}
+          autoPlay
+          loop
+          playsInline
+          muted
+          src={backgroundVideo}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            filter: `blur(${blurAmount}px)`
+          }}
+        />
+      )}
+
 
 
       {/* Mobile Background */}
