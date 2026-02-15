@@ -22,7 +22,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <Button variant="ghost" size="icon" data-testid="button-instagram">
-                <a href="https://www.instagram.com/groovityclub/#" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/groovity.vitb/#" target="_blank" rel="noopener noreferrer">
                 <Instagram className="h-5 w-5" />
                 </a>
               </Button>
@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 GrooVITy. All rights reserved.</p>
+          <p>&copy; 2026 GrooVITy. All rights reserved.</p>
         </div>
       </div>
     </footer>
