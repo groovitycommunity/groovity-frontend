@@ -48,22 +48,24 @@ export default function BackgroundCanvas() {
         playsInline
         muted
         src={backgroundVideo}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
         style={{
           filter: `blur(${blurAmount}px)`
         }}
       />
 
 
+
       {/* Mobile Background */}
       <div
-        className="absolute inset-0 md:hidden bg-cover bg-no-repeat transition-all duration-700 ease-in-out"
+        className="md:hidden absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url(${mobileBg})`,
           backgroundPosition: "center center",
           filter: `blur(${blurAmount}px)`
         }}
       />
+
 
       {/* Optional dark overlay */}
       <div className="absolute inset-0 bg-black/1"></div>

@@ -14,6 +14,21 @@ import { Link, useLocation } from "wouter";
 import { Card } from "@/components/ui/card";
 import CustomCursor from "@/components/CustomCursor";
 
+type EventType = {
+  id: string;
+  title: string;
+  date: string;
+  venue?: string;
+  imageUrl?: string | null;
+  isPaid?: boolean;
+  price?: number | null;
+  upi_id?: string | null;
+  account_number?: string | null;
+  ifsc?: string | null;
+  qr_url?: string | null;
+  registrationType?: "internal" | "external";
+  externalFormUrl?: string | null;
+};
 
 /* COUNTER COMPONENT */
 function CounterStat({ end, suffix = "", label }) {
@@ -122,7 +137,24 @@ export default function Home() {
 
         const data = await res.json();
 
-        const upcoming = data
+        // 🔥 Format SAME as Events.tsx
+        const formatted: EventType[] = data.map((d: any) => ({
+          id: d.id,
+          title: d.title,
+          date: d.date,
+          venue: d.venue,
+          imageUrl: d.imageUrl ?? null,
+          isPaid: d.is_paid === 1,
+          price: d.price ?? null,
+          upi_id: d.upi_id ?? null,
+          account_number: d.account_number ?? null,
+          ifsc: d.ifsc ?? null,
+          qr_url: d.qr_url ?? null,
+          registrationType: d.registrationType ?? "internal",
+          externalFormUrl: d.externalFormUrl ?? null,
+        }));
+
+        const upcoming = formatted
           .filter((e) => new Date(e.date) > new Date())
           .slice(0, 3);
 
@@ -131,6 +163,7 @@ export default function Home() {
         console.error("Homepage events load failed:", err);
       }
     }
+
     load();
   }, []);
 
@@ -163,7 +196,6 @@ export default function Home() {
 
         <StaticHero />
         <ScrollMarquee />
-
         {/* ⭐ EVENT REGISTRATIONS */}
         <AnimatedSection className="py-16 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
@@ -171,6 +203,7 @@ export default function Home() {
               <h2 className="text-3xl font-display font-bold text-foreground">
                 Event Registrations
               </h2>
+
               <Link href="/events">
                 <Button variant="outline" size="sm" className="gap-2">
                   View All <ArrowRight className="h-4 w-4" />
@@ -194,6 +227,7 @@ export default function Home() {
                         <div className="w-12 h-12 rounded-md bg-primary/10 flex justify-center items-center">
                           <Music className="h-6 w-6 text-primary" />
                         </div>
+
                         <div className="min-w-0">
                           <h3 className="font-display font-bold text-base truncate">
                             {event.title}
@@ -206,13 +240,19 @@ export default function Home() {
 
                       <Button
                         size="sm"
-                        onClick={() =>
-                          setSelectedEvent({
-                            title: event.title,
-                            eventType: event.isPaid ? "paid" : "free",
-                            ...event,
-                          })
-                        }
+                        onClick={() => {
+                          // 🔥 FIX: External redirect support
+                          if (
+                            event.registrationType === "external" &&
+                            event.externalFormUrl
+                          ) {
+                            window.open(event.externalFormUrl, "_blank");
+                            return;
+                          }
+
+                          // Internal modal
+                          setSelectedEvent(event);
+                        }}
                       >
                         Register Now
                       </Button>
@@ -271,8 +311,8 @@ export default function Home() {
         </AnimatedSection>
 
 
-         {/* ⭐ GALLERY (COMMENTED OUT ORIGINAL) */}
-{/*
+        {/* ⭐ GALLERY (COMMENTED OUT ORIGINAL) */}
+        {/*
 <AnimatedSection className="py-16 px-6 lg:px-8">
   <div className="max-w-7xl mx-auto bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-8">
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
@@ -318,23 +358,23 @@ export default function Home() {
 </AnimatedSection>
 */}
 
-{/* ⭐ GALLERY COMING SOON */}
-<AnimatedSection className="py-16 px-6 lg:px-8">
-  <div className="max-w-4xl mx-auto text-center bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-12">
-    <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-      Gallery Coming Soon
-    </h2>
+        {/* ⭐ GALLERY COMING SOON */}
+        <AnimatedSection className="py-16 px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center bg-card/95 backdrop-blur-md border border-border shadow-lg rounded-md p-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Gallery Coming Soon
+            </h2>
 
-    <p className="text-muted-foreground text-lg mb-6">
-      We’re capturing the best moments right now 📸  
-      Event photos and memories will appear here very soon.
-    </p>
+            <p className="text-muted-foreground text-lg mb-6">
+              We’re capturing the best moments right now 📸
+              Event photos and memories will appear here very soon.
+            </p>
 
-    <div className="text-sm text-muted-foreground">
-      Stay tuned for the drop.
-    </div>
-  </div>
-</AnimatedSection>
+            <div className="text-sm text-muted-foreground">
+              Stay tuned for the drop.
+            </div>
+          </div>
+        </AnimatedSection>
 
 
         <Footer showVITLogo={true} />
